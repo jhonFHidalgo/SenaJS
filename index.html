@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Ficha SENA 2879646</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#info">Inicio</a></li>
+                    <li><a href="#area">Areas</a></li>
+                    <li><a href="#age">Edades</a></li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="info" id="info">
+            <h2>Hola soy</h2>
+            <h1>JavaScript</h1>
+            <p>En esta actividad deberá aplicar todos los conocimientos adquiridos a lo largo del componente formativo
+                para dar solución a problemas,
+                utilizando todas las estructuras de control requeridas y el lenguaje JavaScript.</p>
+        </div>
+    </div>
+    <!--section areas-->
+    <section class="area" id="area">
+        <div class="area__container">
+            <div class="area__form">
+                <h1>Cálculo de Áreas y Perímetros</h1>
+                <label for="figura" class="label_title">Medidas en cm:</label>
+                <select id="figura" onchange="mostrarInputs()">
+                    <option value="">Seleccionar</option>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="rectangulo">Rectángulo</option>
+                    <option value="triangulo">Triángulo</option>
+                    <option value="circulo">Círculo</option>
+                </select>
+                <div id="inputs">
+                    <div id="input-cuadrado" class="hidden">
+                        <input type="number" id="lado" placeholder="Ingrese medida del Lado">
+                    </div>
+                    <div id="input-rectangulo" class="hidden">
+                        <input type="number" id="base-rect" placeholder=" Ingrese la Base">
+                        <input type="number" id="altura-rect" placeholder=" Ingrese la Altura">
+                    </div>
+                    <div id="input-triangulo" class="hidden">
+                        <input type="number" id="lado1" placeholder=" Ingrese el Lado a">
+                        <input type="number" id="lado2" placeholder=" Ingrese el Lado b">
+                        <input type="number" id="lado3" placeholder=" Ingrese el Lado c">
+                    </div>
+                    <div id="input-circulo" class="hidden">
+                        <input type="number" id="radio" placeholder="Ingrese el Radio">
+                    </div>
+                </div>
+                <div>
+                    <button class="area__form__btn" onclick="calcular()">Calcular</button>
+                </div>
+                <div class="area_results" id="results"></div>
+            </div>
+            <div class="area__image">
+                <div id="figure-image" class="hidden">
+                    <img id="figura-imagen" class="figure-image" src="" alt="Imagen de la figura">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section age-->
+    <section class="age" id="age">
+        <div class="age__container">
+            <h2>Ingresar Edades</h2>
+            <form class="age__form" id="ageForm">
+                <label for="ageInput" id="ageLabel">Ingrese edad 1:</label>
+                <input type="number" id="ageInput" placeholder="Ingresar edad" required>
+                <button type="submit" class="btn-age">Agregar Edad</button>
+                <p id="error-message" class="error-message">Por favor ingrese una edad válida entre 1 y 120.</p>
+            </form>
+        </div>
+        <div class="age__table">
+            <h2>Tabla de Edades Ingresadas</h2>
+            <table id="ageTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="age__stats">
+            <h2>Estadísticas</h2>
+            <p id="minAge">Edad más baja: </p>
+            <p id="maxAge">Edad más alta: </p>
+            <p id="promAge">Promedio de edades: </p>
+            <p id="menorCount">Cantidad de menores de edad: </p>
+            <p id="adultCount">Cantidad de mayores de edad: </p>
+            <p id="seniorCount">Cantidad de adultos mayores: </p>
+        </div>
+    </section>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
